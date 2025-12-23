@@ -1,5 +1,49 @@
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init();
+
+    // Initialize Typed.js
+    var typed = new Typed('#typed-text', {
+        strings: ['Software Engineering Student', 'Problem Solver', 'Innovator', 'Research Enthusiast'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+
+    // Initialize Particles
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#3498db' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: '#3498db', opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+            modes: { repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+    });
+
+    // Dark mode toggle
+    const themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = themeSwitch.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+
     // Mobile navigation toggle
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -79,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const showSkills = () => {
         skillItems.forEach(skill => {
             const indicator = skill.querySelector('.level-indicator');
-            indicator.style.width = '10';
+            indicator.style.width = '0';
             
             setTimeout(() => {
                 indicator.style.width = indicator.getAttribute('style').split(':')[1];

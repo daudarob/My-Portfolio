@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dauda Abdulai - Software Engineering Portfolio</title>
+    <meta name="description" content="Innovative portfolio of Dauda Abdulai, showcasing software engineering projects, skills, and research.">
+    <meta name="keywords" content="software engineering, portfolio, web development, python, javascript, research">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js" defer></script>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
@@ -25,6 +34,11 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+        <div class="theme-toggle">
+            <button id="theme-switch" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -36,7 +50,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hello, I'm <span class="highlight">Dauda Abdulai</span></h1>
-            <h2>Software Engineering Student</h2>
+            <h2 id="typed-text"></h2>
             <p>Passionate about building innovative solutions and exploring the intersection of technology and research.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn primary-btn">View My Work</a>
@@ -53,21 +67,23 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" data-aos="fade-up">
         <div class="section-header">
             <h2>About Me</h2>
             <div class="underline"></div>
         </div>
         <div class="about-content">
             <div class="about-text">
-                <h3>Software Engineering Student</h3>
-                <p>I'm a sophomore at United States International University Africa, focusing on developing strong technical foundations and practical programming skills while pursuing research interests in various domains.</p>
-                <p>My academic journey has equipped me with critical thinking abilities, problem-solving skills, and a passion for creating impactful technology solutions.</p>
+                <h3>Aspiring Software Engineer & Researcher</h3>
+                <p>As a dedicated sophomore at United States International University Africa, I am cultivating a comprehensive foundation in software engineering through rigorous academic coursework and practical application. My studies encompass advanced programming methodologies, system architecture, data structures, and emerging technologies, while actively engaging in interdisciplinary research initiatives.</p>
+                <p>Throughout my academic journey, I have developed strong analytical thinking, collaborative problem-solving abilities, and a proven track record of delivering innovative technological solutions. My commitment extends beyond technical proficiency to include effective communication, project management, and a passion for leveraging technology to solve complex real-world challenges.</p>
+                <p>With a focus on continuous learning and professional development, I am preparing to contribute meaningfully to the tech industry by combining technical expertise with research-driven insights and entrepreneurial thinking.</p>
                 <div class="education">
                     <h3>Academic Background</h3>
                     <div class="education-item">
-                        <h4>Software Engineering</h4>
+                        <h4>Bachelor of Science in Software Engineering</h4>
                         <p>United States International University Africa</p>
+                        <p>Expected Graduation: 2028</p>
                         <p>2024 - Present</p>
                     </div>
                 </div>
@@ -76,7 +92,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills" data-aos="fade-up">
         <div class="section-header">
             <h2>Technical Skills</h2>
             <div class="underline"></div>
@@ -89,36 +105,51 @@
                         <i class="fab fa-python"></i>
                         <h4>Python</h4>
                         <div class="skill-level">
-                            <div class="level-indicator" style="width: 85%"></div>
+                            <div class="level-indicator" style="width: 70%">
+                                <span class="skill-percentage intermediate">70%</span>
+                            </div>
                         </div>
+                        <span class="skill-label">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-js"></i>
                         <h4>JavaScript</h4>
                         <div class="skill-level">
-                            <div class="level-indicator" style="width: 75%"></div>
+                            <div class="level-indicator" style="width: 65%">
+                                <span class="skill-percentage intermediate">65%</span>
+                            </div>
                         </div>
+                        <span class="skill-label">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-cuttlefish"></i>
                         <h4>C++</h4>
                         <div class="skill-level">
-                            <div class="level-indicator" style="width: 70%"></div>
+                            <div class="level-indicator" style="width: 55%">
+                                <span class="skill-percentage beginner">55%</span>
+                            </div>
                         </div>
+                        <span class="skill-label">Beginner</span>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-html5"></i>
                         <h4>HTML & CSS</h4>
                         <div class="skill-level">
-                            <div class="level-indicator" style="width: 80%"></div>
+                            <div class="level-indicator" style="width: 75%">
+                                <span class="skill-percentage intermediate">75%</span>
+                            </div>
                         </div>
+                        <span class="skill-label">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <i class="fas fa-database"></i>
                         <h4>SQL</h4>
                         <div class="skill-level">
-                            <div class="level-indicator" style="width: 60%"></div>
+                            <div class="level-indicator" style="width: 50%">
+                                <span class="skill-percentage beginner">50%</span>
+                            </div>
                         </div>
+                        <span class="skill-label">Beginner</span>
                     </div>
                 </div>
             </div>
@@ -151,13 +182,13 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" data-aos="fade-up">
         <div class="section-header">
             <h2>Projects & Research</h2>
             <div class="underline"></div>
         </div>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in">
                 <div class="project-img">
                     <img src="aerospace.jpeg" alt="Aerospace Propulsion Research">
                 </div>
@@ -172,7 +203,7 @@
                     <a href="https://hanson.stanford.edu/what-we-study/aerospace-propulsion" class="btn project-btn">View Details</a>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in">
                 <div class="project-img">
                     <img src="research.jpeg" alt="Research Paper Development">
                 </div>
@@ -185,6 +216,21 @@
                         <span>Technical Writing</span>
                     </div>
                     <a href="https://digital.studygroup.com/blog/how-to-write-a-research-paper" class="btn project-btn">View Details</a>
+                </div>
+            </div>
+            <div class="project-card" data-aos="zoom-in">
+                <div class="project-img">
+                    <img src="culinary.jpeg" alt="USIU-A Smart Food Ordering System">
+                </div>
+                <div class="project-info">
+                    <h3>USIU-A Smart Food Ordering System</h3>
+                    <p>Developed a smart food ordering system for USIU-A campus, featuring online menu browsing, order placement, and delivery tracking with integrated payment solutions.</p>
+                    <div class="project-tags">
+                        <span>Web Development</span>
+                        <span>Ordering System</span>
+                        <span>Smart Technology</span>
+                    </div>
+                    <a href="https://github.com/daudarob1997/usiu-food-ordering" class="btn project-btn">View Details</a>
                 </div>
             </div>
             <!-- Additional project cards can be added here -->
@@ -236,7 +282,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" data-aos="fade-up">
         <div class="section-header">
             <h2>Get In Touch</h2>
             <div class="underline"></div>
