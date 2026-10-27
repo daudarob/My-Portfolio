@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local editor/IDE settings
+.claude/
+.vscode/
+
+# Build
+dist/
+build/
